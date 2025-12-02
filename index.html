@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gororoba de IA: Passe no Teste de Curadoria Humana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #0c0a09 100%);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .cta-button {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 15px rgba(132, 204, 22, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(132, 204, 22, 0.6);
+        }
+
+        .text-accent {
+            color: #84cc16;
+            /* Lime 500 */
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #84cc16;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient pt-16 pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-lime-400 uppercase font-semibold text-sm tracking-widest">O NOVO DESAFIO
+                CORPORATIVO</span>
+            <h1 class="mt-4 text-6xl md:text-7xl font-extrabold text-white leading-tight">
+                Chega de <span class="text-lime-400">Gororoba de IA</span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+                Sua equipe está perdendo produtividade por ter que corrigir relatórios superficiais e códigos
+                incompletos gerados por Inteligência Artificial? Transforme o atalho vazio em <span
+                    class="font-bold">produtividade curada</span>.
+            </p>
+            <div class="mt-10">
+                <!-- Ícone do Font Awesome incluído -->
+                <a href="javascript:void(0)" onclick="openModal()"
+                    class="cta-button inline-flex items-center justify-center px-12 py-4 border border-transparent text-lg font-bold rounded-full text-gray-900 bg-lime-500 hover:bg-lime-400">
+                    PASSE NO TESTE ANTI-GOROROBA DE IA <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">Aplique a Curadoria Humana em qualquer ferramenta de IA.</p>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-900 section-title">O Custo da Falsa Produtividade</h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                A Gororoba de IA não é preguiça, é um erro estratégico. Ela cria a ilusão de avanço, mas esconde um
+                custo real.
+            </p>
+
+            <div class="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
+
+                <!-- Metric 1 -->
+                <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-100">
+                    <div class="text-5xl font-extrabold text-red-600">
+                        2 Horas
+                    </div>
+                    <p class="mt-3 text-lg font-semibold text-gray-900">
+                        Tempo de Retrabalho
+                    </p>
+                    <p class="mt-1 text-gray-500 text-sm">
+                        O tempo médio gasto para corrigir e contextualizar cada entrega vazia.
+                    </p>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-100">
+                    <div class="text-5xl font-extrabold text-red-600">
+                        US$ 9 Milhões
+                    </div>
+                    <p class="mt-3 text-lg font-semibold text-gray-900">
+                        Prejuízo Anual Estimado
+                    </p>
+                    <p class="mt-1 text-gray-500 text-sm">
+                        Custo invisível de produtividade perdida em grandes corporações.
+                    </p>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-100">
+                    <div class="text-5xl font-extrabold text-red-600">
+                        40%
+                    </div>
+                    <p class="mt-3 text-lg font-semibold text-gray-900">
+                        Já Receberam Workslop
+                    </p>
+                    <p class="mt-1 text-gray-500 text-sm">
+                        Profissionais que já gastaram tempo corrigindo trabalho de colegas (Fonte: HBR).
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section: Conteúdo Generalizado -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-gray-900 text-center section-title">Sua Estratégia Anti-Gororoba
+            </h2>
+            <p class="mt-4 text-xl text-gray-600 text-center max-w-4xl mx-auto">
+                Domine o uso de <span class="font-bold">qualquer ferramenta de IA Generativa</span> e estabeleça o <span
+                    class="font-bold">Padrão Ouro de Curadoria Humana</span> em 3 pilares essenciais.
+            </p>
+
+            <div class="mt-16 space-y-12">
+
+                <!-- Pilar 1: Conscientização e Filtro (Diretrizes Claras) -->
+                <div class="flex flex-col md:flex-row items-center bg-white p-8 rounded-xl shadow-xl">
+                    <div class="md:w-1/3 flex justify-center mb-6 md:mb-0">
+                        <div class="p-4 bg-lime-100 rounded-full">
+                            <i class="fas fa-list-check text-4xl text-lime-600"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-10 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-gray-900">1. Diagnóstico de Gororoba e Gestão de Risco</h3>
+                        <p class="mt-2 text-gray-600">
+                            Recurso: O Teste não apenas pontua, mas diagnostica sua área de Gororoba predominante (Risco
+                            Factual, Vagueza Estratégica ou Operação Genérica).
+                        </p>
+                        <p class="mt-1 text-sm font-semibold text-accent">
+                            Foco em: Entender a causa raiz da baixa qualidade para direcionar o treinamento de forma
+                            eficiente.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pilar 2: Prática e Validação (Teste e Score) -->
+                <div class="flex flex-col md:flex-row items-center bg-white p-8 rounded-xl shadow-xl">
+                    <div class="md:w-1/3 flex justify-center mb-6 md:mb-0">
+                        <div class="p-4 bg-lime-100 rounded-full">
+                            <i class="fas fa-brain text-4xl text-lime-600"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-10 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-gray-900">2. Protocolo de Validação e Curadoria Humana</h3>
+                        <p class="mt-2 text-gray-600">
+                            Ferramenta: Imediatamente após o diagnóstico, oferecemos o Protocolo de Validação em 5
+                            Passos. É a estrutura para transformar qualquer saída de IA em uma entrega de alto valor.
+                        </p>
+                        <p class="mt-1 text-sm font-semibold text-accent">
+                            Ação: Este protocolo é a primeira entrega tangível do nosso suporte de consultoria sob
+                            demanda.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pilar 3: Comunidade e Inovação (Prompt Engineering) -->
+                <div class="flex flex-col md:flex-row items-center bg-white p-8 rounded-xl shadow-xl">
+                    <div class="md:w-1/3 flex justify-center mb-6 md:mb-0">
+                        <div class="p-4 bg-lime-100 rounded-full">
+                            <i class="fas fa-code text-4xl text-lime-600"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-10 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-gray-900">3. Suporte Especializado em Prompt Engineering</h3>
+                        <p class="mt-2 text-gray-600">
+                            Engajamento: Convidamos você para nosso canal de Consultoria Sob Demanda. Receba suporte
+                            direto para refinar seus prompts mais críticos e treinar sua equipe na área exata
+                            diagnosticada.
+                        </p>
+                        <p class="mt-1 text-sm font-semibold text-accent">
+                            Resultado: Fim da Gororoba, início da eficiência e foco no uso estratégico da IA.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="teste" class="py-24 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold text-white">Pronto para Liderar a Curadoria de IA?</h2>
+            <p class="mt-4 text-xl text-gray-300">
+                Pare de perder tempo com Gororoba. Comece a construir um fluxo de trabalho onde a IA realmente aumenta a
+                inteligência, e não a confusão.
+            </p>
+            <div class="mt-10">
+                <a href="javascript:void(0)" onclick="openModal()"
+                    class="cta-button inline-flex items-center justify-center px-16 py-5 border border-transparent text-xl font-bold rounded-full text-gray-900 bg-lime-500 hover:bg-lime-400">
+                    QUERO PASSAR NO TESTE AGORA!
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">Teste 100% gratuito e focado em resultados.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p></p>&copy; 2025 itlmkt.com. Todos os direitos reservados.</p>
+            <p class="mt-2 text-gray-400 text-xs">Feito com amor ❤️ e Vibe Coding no Antigravity com o Gemini 3 Pro</p>
+        </div>
+    </footer>
+
+    <!-- Modal do Teste -->
+    <div id="testModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+
+            <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true"
+                onclick="closeModal()"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-2xl leading-6 font-bold text-gray-900" id="modal-title">
+                                    Teste Anti-Ruído de IA: Curadoria Executiva
+                                </h3>
+                                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500">
+                                    <i class="fas fa-times text-2xl"></i>
+                                </button>
+                            </div>
+
+                            <form id="antiGororobaForm" class="space-y-8 max-h-[70vh] overflow-y-auto pr-4">
+
+                                <!-- Identificação -->
+                                <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                                    <h4 class="text-lg font-bold text-blue-800 mb-4 uppercase tracking-wide">Seus Dados
+                                    </h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="nome" class="block text-sm font-medium text-gray-700 mb-1">Nome
+                                                Completo</label>
+                                            <input type="text" id="nome" name="nome" required
+                                                class="w-full rounded-md border-gray-300 shadow-sm focus:border-lime-500 focus:ring focus:ring-lime-200 focus:ring-opacity-50 p-2 border">
+                                        </div>
+                                        <div>
+                                            <label for="email"
+                                                class="block text-sm font-medium text-gray-700 mb-1">E-mail
+                                                Corporativo</label>
+                                            <input type="email" id="email" name="email" required
+                                                class="w-full rounded-md border-gray-300 shadow-sm focus:border-lime-500 focus:ring focus:ring-lime-200 focus:ring-opacity-50 p-2 border">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Seção 1 -->
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                    <h4 class="text-lg font-bold text-lime-700 mb-4 uppercase tracking-wide">Seção 1:
+                                        Dados e Fatos</h4>
+
+                                    <!-- Cenário 1 -->
+                                    <div class="mb-8">
+                                        <p class="font-bold text-gray-900 mb-3">Cenário 1: A Fonte Fantasma</p>
+                                        <p class="text-gray-600 mb-4 text-sm">Você solicita à IA um relatório sobre
+                                            tendências de e-commerce no Brasil para 2025. O texto gerado afirma:
+                                            "Segundo estudo da McKinsey de 2024, 85% dos brasileiros preferem compras
+                                            via comando de voz." Você não encontra esse dado em lugar nenhum. Qual a
+                                            ação de curadoria correta?</p>
+                                        <div class="space-y-2">
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q1" value="A"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(A) Manter o dado, pois a
+                                                    McKinsey é uma fonte confiável e a IA deve ter acesso a relatórios
+                                                    pagos.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q1" value="B"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(B) Remover a citação
+                                                    específica e generalizar para "Estudos indicam que o comando de voz
+                                                    é uma tendência", mantendo o fluxo do texto.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q1" value="C"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(C) Substituir o dado alucinado
+                                                    por uma estatística real de uma fonte verificável (ex: Ebit/Nielsen)
+                                                    ou remover a afirmação inteira se não houver prova.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q1" value="D"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(D) Colocar um asterisco
+                                                    dizendo "Dado gerado por IA" e enviar o relatório.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cenário 2 -->
+                                    <div>
+                                        <p class="font-bold text-gray-900 mb-3">Cenário 2: O Falso Consenso</p>
+                                        <p class="text-gray-600 mb-4 text-sm">Ao pedir um resumo sobre a regulação de IA
+                                            na Europa, o modelo escreve: "O AI Act foi aprovado unanimemente por todos
+                                            os países membros, proibindo totalmente o reconhecimento facial." Você sabe
+                                            que houve debates intensos e exceções. Como proceder?</p>
+                                        <div class="space-y-2">
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q2" value="A"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(A) Ajustar o texto para
+                                                    refletir a nuance: "O AI Act foi aprovado com diretrizes rigorosas
+                                                    para reconhecimento facial, embora preveja exceções para segurança
+                                                    pública", corrigindo a generalização falsa.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q2" value="B"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(B) Aceitar o texto como está,
+                                                    pois "proibição total" é uma hipérbole aceitável para causar impacto
+                                                    na apresentação.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q2" value="C"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(C) Pedir para a IA "reescrever
+                                                    com mais certeza" para eliminar dúvidas.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q2" value="D"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(D) Apagar o parágrafo e
+                                                    escrever "A Europa tem leis sobre IA" para não se
+                                                    comprometer.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Seção 2 -->
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                    <h4 class="text-lg font-bold text-lime-700 mb-4 uppercase tracking-wide">Seção 2:
+                                        Contexto e Relevância</h4>
+
+                                    <!-- Cenário 3 -->
+                                    <div class="mb-8">
+                                        <p class="font-bold text-gray-900 mb-3">Cenário 3: O Conselho Genérico</p>
+                                        <p class="text-gray-600 mb-4 text-sm">Você é CEO de uma startup B2B e pede
+                                            estratégias de crescimento. A IA sugere: "Invista em marketing digital, crie
+                                            uma presença forte nas redes sociais e foque na satisfação do cliente." O
+                                            que você faz?</p>
+                                        <div class="space-y-2">
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q3" value="A"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(A) Implementa imediatamente,
+                                                    pois são os pilares do marketing moderno.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q3" value="B"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(B) Rejeita a resposta
+                                                    (Gororoba) e refaz o prompt detalhando seu nicho, ticket médio e
+                                                    ciclo de vendas, exigindo táticas específicas como "Account-Based
+                                                    Marketing" ou "Parcerias de Canal".</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q3" value="C"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(C) Copia e cola no slide de
+                                                    estratégia, pois soa profissional e abrangente.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q3" value="D"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(D) Pede para a IA "fazer o
+                                                    texto ficar mais longo" para parecer mais robusto.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cenário 4 -->
+                                    <div>
+                                        <p class="font-bold text-gray-900 mb-3">Cenário 4: O Tom Deslocado</p>
+                                        <p class="text-gray-600 mb-4 text-sm">Você precisa de um e-mail para cobrar um
+                                            fornecedor atrasado com quem tem uma relação de longa data e amizade. A IA
+                                            gera: "Prezado Senhor, vimos por meio desta notificar o inadimplemento
+                                            contratual e exigir a entrega imediata sob pena de medidas legais." Qual a
+                                            curadoria necessária?</p>
+                                        <div class="space-y-2">
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q4" value="A"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(A) Enviar assim mesmo para
+                                                    mostrar seriedade e profissionalismo.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q4" value="B"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(B) Reescrever totalmente o tom
+                                                    para: "Oi [Nome], tudo bem? Estou preocupado com o prazo da entrega
+                                                    X. Conseguimos resolver isso hoje?", mantendo o objetivo mas
+                                                    ajustando à relação real.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q4" value="C"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(C) Adicionar um emoji no final
+                                                    do texto jurídico para suavizar.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q4" value="D"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(D) Pedir para a IA reescrever
+                                                    "em tom de pirata" para quebrar o gelo.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Seção 3 -->
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                    <h4 class="text-lg font-bold text-lime-700 mb-4 uppercase tracking-wide">Seção 3:
+                                        Linguagem e Eficiência</h4>
+
+                                    <!-- Cenário 5 -->
+                                    <div class="mb-8">
+                                        <p class="font-bold text-gray-900 mb-3">Cenário 5: A Enrolação Corporativa</p>
+                                        <p class="text-gray-600 mb-4 text-sm">Você pergunta "Qual o prazo do projeto?".
+                                            A IA responde: "No que tange à cronologia estipulada para a consecução das
+                                            etapas projetuais, é imperativo ressaltar que, mediante a análise das
+                                            variáveis envolvidas e a alocação de recursos, vislumbra-se a finalização
+                                            para o dia 10." Como você edita?</p>
+                                        <div class="space-y-2">
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q5" value="A"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(A) Mantém o texto, pois
+                                                    linguagem complexa demonstra inteligência e sofisticação.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q5" value="B"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(B) Substitui tudo por: "O
+                                                    prazo final é dia 10."</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q5" value="C"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(C) Pede para a IA adicionar
+                                                    mais dois parágrafos explicando a importância do gerenciamento de
+                                                    tempo.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q5" value="D"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(D) Troca "consecução" por
+                                                    "realização" mas mantém o resto da estrutura para não ficar "curto
+                                                    demais".</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cenário 6 -->
+                                    <div>
+                                        <p class="font-bold text-gray-900 mb-3">Cenário 6: A Lista Infinita</p>
+                                        <p class="text-gray-600 mb-4 text-sm">Ao pedir 3 ideias de nomes para um
+                                            produto, a IA gera uma lista com 50 opções, incluindo explicações
+                                            filosóficas para cada uma. O que define uma boa curadoria aqui?</p>
+                                        <div class="space-y-2">
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q6" value="A"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(A) Encaminhar a lista de 50
+                                                    nomes para a equipe votar, afinal, quanto mais opções,
+                                                    melhor.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q6" value="B"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(B) Ler tudo, selecionar as 3
+                                                    melhores que realmente se alinham à marca, verificar disponibilidade
+                                                    de domínio e apresentar apenas essas 3 com sua justificativa
+                                                    estratégica.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q6" value="C"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(C) Pedir mais 50 nomes para
+                                                    ter certeza que não perdeu nada.</span>
+                                            </label>
+                                            <label
+                                                class="flex items-start p-3 bg-white rounded border border-gray-200 hover:bg-lime-50 cursor-pointer transition">
+                                                <input type="radio" name="q6" value="D"
+                                                    class="mt-1 text-lime-600 focus:ring-lime-500">
+                                                <span class="ml-3 text-sm text-gray-700">(D) Escolher a primeira, a do
+                                                    meio e a última aleatoriamente para economizar tempo.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse rounded-b-lg">
+                                    <button type="button" onclick="submitForm()" id="btnSubmit"
+                                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-lime-600 text-base font-medium text-white hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                        Enviar Respostas
+                                    </button>
+                                    <button type="button" onclick="closeModal()"
+                                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                                        Cancelar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Resultado -->
+    <div id="resultModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true"
+                onclick="closeResultModal()"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4" id="resultContent">
+                    <div class="flex justify-between items-center mb-6 border-b pb-4">
+                        <h3 class="text-2xl leading-6 font-bold text-gray-900">
+                            Seu Diagnóstico Anti-Gororoba
+                        </h3>
+                        <button onclick="closeResultModal()" class="text-gray-400 hover:text-gray-500">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Coluna 1: Gráfico e Nota -->
+                        <div class="flex flex-col items-center justify-center bg-gray-50 p-6 rounded-xl">
+                            <h4 class="text-lg font-bold text-gray-700 mb-4">Score de Curadoria</h4>
+                            <div class="relative w-64 h-64">
+                                <canvas id="scoreChart"></canvas>
+                                <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                    <span class="text-4xl font-extrabold text-gray-800" id="scoreValue">0%</span>
+                                    <span class="text-sm text-gray-500">Curadoria</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-center text-sm text-gray-600">
+                                Baseado em <span id="correctCount">0</span> de 6 cenários.
+                            </p>
+                        </div>
+
+                        <!-- Coluna 2: Relatório da IA -->
+                        <div class="flex flex-col">
+                            <h4 class="text-lg font-bold text-lime-700 mb-4 uppercase tracking-wide">Análise da IA</h4>
+                            <div id="aiReportContent"
+                                class="prose prose-sm prose-lime max-w-none text-gray-700 overflow-y-auto max-h-[400px]">
+                                <!-- Conteúdo da IA será inserido aqui -->
+                                <div class="flex justify-center py-8">
+                                    <i class="fas fa-circle-notch fa-spin text-4xl text-lime-500"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" onclick="downloadPDF()"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        <i class="fas fa-file-pdf mr-2"></i> Baixar PDF
+                    </button>
+                    <button type="button" onclick="closeResultModal()"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function openModal() {
+            document.getElementById('testModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal() {
+            document.getElementById('testModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        function openResultModal() {
+            document.getElementById('resultModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeResultModal() {
+            document.getElementById('resultModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                closeModal();
+                closeResultModal();
+            }
+        });
+
+        let myChart = null;
+
+        function initChart(score) {
+            const ctx = document.getElementById('scoreChart').getContext('2d');
+            const gororobaScore = 100 - score;
+
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Curadoria Humana', 'Gororoba de IA'],
+                    datasets: [{
+                        data: [score, gororobaScore],
+                        backgroundColor: [
+                            '#84cc16', // Lime 500
+                            '#e5e7eb'  // Gray 200
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    cutout: '75%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    }
+                }
+            });
+
+            document.getElementById('scoreValue').innerText = score + '%';
+        }
+
+        function downloadPDF() {
+            // Clone the element to modify it for PDF generation
+            const originalElement = document.getElementById('resultContent');
+            const clone = originalElement.cloneNode(true);
+
+            // Remove scroll and height limits from the report content in the clone
+            const reportContent = clone.querySelector('#aiReportContent');
+            reportContent.classList.remove('overflow-y-auto', 'max-h-[400px]');
+
+            // Create a temporary container for the clone to ensure it renders fully
+            const container = document.createElement('div');
+            container.style.position = 'absolute';
+            container.style.left = '-9999px';
+            container.style.top = '0';
+            container.style.width = '800px'; // Fixed width for consistent PDF layout
+            container.appendChild(clone);
+            document.body.appendChild(container);
+
+            const opt = {
+                margin: 0.5,
+                filename: 'Resultado_Anti_Gororoba.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(clone).save().then(() => {
+                document.body.removeChild(container);
+            });
+        }
+
+        function submitForm() {
+            const form = document.getElementById('antiGororobaForm');
+            const btn = document.getElementById('btnSubmit');
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+
+            if (!nome || !email) {
+                alert('Por favor, preencha seu Nome e E-mail para continuar.');
+                return;
+            }
+
+            // Collect answers
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // UI Loading
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Analisando com IA...';
+
+            fetch('send_test.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        closeModal();
+
+                        // Update UI with Data
+                        document.getElementById('aiReportContent').innerHTML = data.report;
+                        document.getElementById('correctCount').innerText = data.correct_count;
+
+                        // Open Modal and Init Chart
+                        openResultModal();
+                        initChart(data.score);
+
+                        form.reset();
+                    } else {
+                        alert('Erro ao enviar: ' + data.message);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('Ocorreu um erro ao enviar o formulário.');
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = 'Enviar Respostas';
+                });
+        }
+    </script>
+</body>
+
+</html>
