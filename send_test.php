@@ -135,9 +135,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>Resultado Teste Anti-Gororoba</title>
         <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .header { background-color: #84cc16; color: white; padding: 20px; border-radius: 5px 5px 0 0; }
+            .header { background-color: #8b5cf6; color: white; padding: 20px; border-radius: 5px 5px 0 0; }
             .content { padding: 20px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px; }
-            .report { background-color: #f0fdf4; padding: 15px; border-left: 4px solid #84cc16; margin-top: 20px; }
+            .report { background-color: #f5f3ff; padding: 15px; border-left: 4px solid #8b5cf6; margin-top: 20px; }
         </style>
     </head>
     <body>
